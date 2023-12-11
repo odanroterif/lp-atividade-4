@@ -11,36 +11,40 @@ struct student
     float note[2];
     float result;
 };
-void condition(struct student people[]){
+void condition(struct student people[])
+{
+
+    //char c[5][999];
+    int i;
     
-    //char c[999];
-
-    if (people[0].result >= 7)
+    for (i = 0; i < 5; i++)
     {
-       //strcpy(c,"\nAPROVADO");
-       printf("\nAPROVADO");
         
-    } else
-    {
-        //strcpy(c,"\nREPROVAODO");
-        printf("\nREPROVAODO");
-
+        if (people[i].result >= 7)
+        {
+            //strcpy(c[i], "\nAPROVADO");
+             printf("\nAPROVADO");
+        }
+        else
+        {
+            //strcpy(c[i], "\nREPROVAODO");
+             printf("\nREPROVAODO");
+        }
     }
     //return c;
-   }
+}
 
 void results(struct student people[])
 {
-
     int i;
 
     for (i = 0; i < 5; i++)
     {
-        printf("\naluno %i média: %.1f",i+1,people[i].result);   
-        condition(people);
+       
+        printf("\naluno %i mÃ©dia: %.1f ", i + 1, people[i].result); //condition(finalnote));
+        (condition(people));
     }
 }
-
 
 int main()
 {
@@ -62,7 +66,7 @@ int main()
         {
             do
             {
-                printf("\nDigite a %i° nota: ", j + 1);
+                printf("\nDigite a %iÂ° nota: ", j + 1);
                 scanf("%f", &students[i].note[j]);
                 fflush(stdin);
                 system("cls || clear");
@@ -70,11 +74,11 @@ int main()
                 {
                     system("cls || clear");
                     printf("NOTA INVALIDA\n\n");
-                }  
+                }
             } while (students[i].note[j] < 0 || students[i].note[j] > 10);
             plus += students[i].note[j];
         }
-        students[i].result = plus/2;
+        students[i].result = plus / 2;
         plus = 0;
     }
     system("cls || clear");
