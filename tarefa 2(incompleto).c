@@ -11,38 +11,22 @@ struct student
     float note[2];
     float result;
 };
-void condition(struct student people[])
-{
-
-    //char c[5][999];
-    int i;
-    
-    for (i = 0; i < 5; i++)
-    {
-        
-        if (people[i].result >= 7)
-        {
-            //strcpy(c[i], "\nAPROVADO");
-             printf("\nAPROVADO");
-        }
-        else
-        {
-            //strcpy(c[i], "\nREPROVAODO");
-             printf("\nREPROVAODO");
-        }
-    }
-    //return c;
-}
-
 void results(struct student people[])
 {
     int i;
 
     for (i = 0; i < 5; i++)
     {
-       
-        printf("\naluno %i média: %.1f ", i + 1, people[i].result); //condition(finalnote));
-        (condition(people));
+
+        printf("\n\naluno %i média: %.1f ", i + 1, people[i].result);
+        if (people[i].result >= 7)
+        {
+            printf("\nAPROVADO");
+        }
+        else
+        {
+            printf("\nREPROVAODO");
+        }
     }
 }
 
