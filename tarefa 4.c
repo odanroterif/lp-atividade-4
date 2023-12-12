@@ -57,21 +57,22 @@ float transition2(struct bankconter bank, int select[])
 int main()
 {
     setlocale(LC_ALL, "portuguese");
-    // variable declaration--------------------
+//variable declaration--------------------
     struct bankconter bank;
     float acont[2];
     int option[3];
-    //----------------------------------------
+//----------------------------------------
+    printf("Digite seu nome: ");
+    gets(bank.name);
+    fflush(stdin);
+    printf("\nDigite o número da conta: ");
+    scanf("%i", &bank.number);
+    fflush(stdin);
     do
     {
         do
         {
-            printf("Digite seu nome: ");
-            gets(bank.name);
-            fflush(stdin);
-            printf("\nDigite o número da conta: ");
-            scanf("%i", &bank.number);
-            fflush(stdin);
+
             system("cls || clear");
             printf("1- CONTA POUPANÇA");
             printf("\n2- CONTA CORRENTE");
@@ -135,37 +136,9 @@ int main()
             }
         }
         system("cls || clear");
-    } while (option[0] != 1 && option[0] != 2 && option[0] != 3);
+    } while (option[0] != 3);
     system("cls || clear");
     printf("saldo restante da conta poupança: %.2f", acont[0]);
     printf("\nsaldo restante da conta corrente: %.2f", acont[1]);
     return 0;
 }
-}
-
-int main()
-{
-    setlocale(LC_ALL, "portuguese");
-//variable declaration--------------------
-    struct bankconter bank;
-    int i;
-//----------------------------------------
-    for (i = 0; i < 3; i++)
-    {
-        printf("Digite um nome: ");
-        gets(persons[i].name);
-        fflush(stdin);
-        printf("\nDigite um número: ");
-        scanf("%i", &persons[i].telephone);
-        fflush(stdin);
-        printf("\nDigite um email: ");
-        gets(persons[i].email);
-        fflush(stdin);
-        system("cls || clear");
-    }
-    printf("Qual o nome de quem você esta buscando nos contatos?: ");
-    gets(persons[3].name);
-    fflush(stdin);
-    printf("\n\naqui esta o número: %i", phone(persons));
-    return 0;
-}*/
